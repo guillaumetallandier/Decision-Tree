@@ -14,9 +14,9 @@ public class CtrlCharacter {
     
     private static ArrayList<Character> listCharacter = new ArrayList<Character>();
     
-    public CtrlCharacter() {
-        source=new DataSource("../../database.csv");
-        System.out.println(source);
+    public CtrlCharacter() throws Exception {
+        source=new DataSource("../database.csv");
+        System.out.println(source.getDataSet());
     }
     
     public static Character creationCharacter() {
