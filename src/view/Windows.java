@@ -1,6 +1,5 @@
-package business_intelligence.view;
-
-import business_intelligence.controler.CtrlCharacter;
+package view;
+import controller.CtrlCharacter;
 
 import java.awt.BorderLayout;
 

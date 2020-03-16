@@ -1,22 +1,55 @@
-package business_intelligence.controler;
-import weka.core.converters.ConverterUtils.DataSource;
+package controller;
 
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
-import business_intelligence.model.Character;
+import model.Character;
+
+import weka.core.Attribute;
+
 
 public class CtrlCharacter {
 
-    private DataSource source;
+   // private Array<String> source;
     
     private int id;
     
     private static int nextID = 0;
-    
+
+    private static ArrayList<String> hats;
+
+    private static ArrayList<String> beards;
+
+    private static ArrayList<String> cigarets;
+
+    private static ArrayList<Attribute> attributes;
+
+
     private static ArrayList<Character> listCharacter = new ArrayList<Character>();
     
-    public CtrlCharacter() throws Exception {
-        source=new DataSource("../database.csv");
-        System.out.println(source.getDataSet());
+    public CtrlCharacter(){
+        attributes = new ArrayList<>();
+
+        hats= new ArrayList<String>();
+        hats.add("Melon Hat");
+        hats.add("Cap");
+        hats.add("None");
+
+        beards = new ArrayList<String>();
+        beards.add("Mustache");
+        beards.add("Beard");
+        beards.add("Beard and Mustache");
+        beards.add("None");
+
+        cigarets = new ArrayList<>();
+        cigarets.add("Cigaret");
+        cigarets.add("Cigar");
+        cigarets.add("None");
+
+        attributes.add(new Attribute("Hats",hats));
+        attributes.add(new Attribute("Beards",beards));
+        attributes.add(new Attribute("Cigarets",cigarets));
+
     }
     
     public static Character creationCharacter() {
