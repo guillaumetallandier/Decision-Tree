@@ -1,4 +1,4 @@
-package business_intelligence.model;
+package model;
 
 
 public class Character {
