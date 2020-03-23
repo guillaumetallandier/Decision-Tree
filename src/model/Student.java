@@ -41,7 +41,7 @@ public class Student{
 
     @Override
     public String toString(){
-        return "Student "+_ID+" : "+ _beard+","+_glasses+","+_cigaret+","+_hat+","+_arms;
+        return "Student "+_ID+" : "+ _beard.getName()+","+_glasses.getName()+","+_cigaret.getName()+","+_hat.getName()+","+_arms.getName();
     }
 
 
