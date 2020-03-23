@@ -1,5 +1,5 @@
 import controller.CtrlCharacter;
-import view.Windows;
+import view.StudentsWindows;
 
 public class Prgm_principal {
     public static void main(String[] args) throws Exception {

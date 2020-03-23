@@ -3,7 +3,7 @@ package model;
 import java.awt.*;
 
 public class Beard extends Item {
-    private Beard(String name, Image image) {
+    private Beard(String name, String image) {
         super(name, image);
     }
 
