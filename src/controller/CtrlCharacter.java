@@ -1,16 +1,14 @@
 package controller;
 
 
-import java.lang.reflect.Array;
-import java.security.SecureRandom;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
 import model.*;
 
 import model.Hat;
-import model.Item;
-import weka.core.Attribute;
+import view.StudentsWindow;
 import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -25,13 +23,16 @@ public class CtrlCharacter {
     private Instances _instances;
 
     private ArrayList<Student> _students;
+
+    private StudentsWindow _window;
     
-    public CtrlCharacter(){
+    public CtrlCharacter() throws IOException {
         _ctrlItems = new CtrlItems();
         _students = new ArrayList<>();
         _instances = new Instances("Students",_ctrlItems.getAttributes(),25);
         _instances.setClassIndex(_instances.numAttributes()-1);
         creationOfStudents(25);
+        _window=new StudentsWindow(this);
     }
     
     private void creationOfStudents(int numberOfStudents) {
@@ -67,17 +68,4 @@ public class CtrlCharacter {
     public ArrayList<Student> getStudents(){
         return _students;
     }
-    /*
-    public static Character getCellule(Integer id) {
-        for(int i=0;i<listCharacter.size();i++){
-            if(listCharacter.get(i).getID() == id){
-                return listCharacter.get(i);
-            }
-        }
-        return null;
-    }
-
-    public static ArrayList<Character> getListCharacter() {
-        return listCharacter;
-    }*/
 }
