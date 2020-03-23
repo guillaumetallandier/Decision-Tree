@@ -28,11 +28,12 @@ public class Windows extends JFrame{
     
     private JPanel pAjoutPeronnage = new JPanel();
     
-    
-/*
     public Windows(){
-        
-        this.setSize(1200, 800);
+    } 
+
+public StudendsWindows(Students[]){
+				
+        this.setSize(1000, 1000);
         this.setTitle("Business intelligence");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
@@ -45,32 +46,52 @@ public class Windows extends JFrame{
         pPrincipal.add(menuBar, BorderLayout.SOUTH);
         JButton bLancer = new JButton("Lancer");
         menuBar.add(bLancer);
+		
+		int id = 1;
 
-        pAjoutPeronnage.setLayout(new GridLayout(4, 4));
+        pAjoutPeronnage.setLayout(new GridLayout(5, 5));
         pPrincipal.add(pAjoutPeronnage, BorderLayout.CENTER);
-        int id = 1;
         Border blackline = BorderFactory.createLineBorder(Color.black);
+		
         //panel pour les personnages
-        for(int i=0; i<16 ;i++){
+        for(int i=0; i<25 ;i++){
             JPanel pPersonnage = new JPanel();
             pPersonnage.setBackground(Color.red);
             pPersonnage.setBorder(blackline);
-            
-            CtrlCharacter.creationCharacter();
-            JLabel lID = new JLabel(""+CtrlCharacter.getListCharacter().get(i).getID());
-            
-            JLabel lAttribute = new JLabel(RandCharacter(CtrlCharacter.getListCharacter().get(i).getID()));
-            
-            pPersonnage.add(lID);
-            pPersonnage.add(lAttribute);
+			
+			JLabel Lid = new JLabel("" + id);
+			Lid.setVisible("false");
+			pPersonnage.add(Lid);
+			
+			JLabel  img_student= new JLabel( new ImageIcon( "src/img/img_student.png"));
+			img_student.setVisible("true");
+			pPersonnage.add(img_student);
+			
+			Students[].get(i).getHat().getPct().setVisible("true");
+			pPersonnage.add(Students[].get(i).getHat().getPct());
+			
+			Students[].get(i).getBeard().getPct().setVisible("true");
+			pPersonnage.add(Students[].get(i).getBeard().getPct());
+			
+			Students[].get(i).getCigaret().getPct().setVisible("true");
+			pPersonnage.add(Students[].get(i).getCigaret().getPct());
+			
+			Students[].get(i).getGlasses().getPct().setVisible("true");
+			pPersonnage.add(Students[].get(i).getGlasses().getPct());
+			
+			Students[].get(i).getArms().getPct().setVisible("true");
+			pPersonnage.add(Students[].get(i).getArms().getPct());
+
             pPersonnage.addMouseListener(new MouseListener() {
              
                 public void mouseClicked(MouseEvent arg0) {
                     if(pPersonnage.getBackground() == Color.red){
                         pPersonnage.setBackground(Color.green);
+						Students[].get(this.Lid).setIsInClass("true");
                     }
                     else{
                         pPersonnage.setBackground(Color.red);
+						Students[].get(this.Lid).setIsInClass("false");
                     }
                     
      
@@ -100,52 +121,10 @@ public class Windows extends JFrame{
             
             pPersonnage.setVisible(true);
             pAjoutPeronnage.add(pPersonnage);
-            id++;
+			id++;
         }
     }
-    
-    private String RandCharacter(int id){
         
-        ArrayList<String> attribute = new ArrayList<String>();
-        attribute.add("chapeau");
-        attribute.add("cigare");
-        attribute.add("lunettes");
-        attribute.add("boucle d'oreille");
         
-        Random rand = new Random();
-        String randAttribute ="";
-        int alreadyPicked = 0;
-
-        int NbAttrbibute = rand.nextInt(4); //rand.nextInt(max - min + 1) + min;
-        for(int k=0; k<NbAttrbibute;k++){
-            int RandomAttribute = rand.nextInt((4-alreadyPicked));
-            randAttribute = randAttribute + " " + attribute.get(RandomAttribute);
-
-            switch(attribute.get(RandomAttribute)) {
-              case "chapeau":
-                CtrlCharacter.getListCharacter().get(id).setChapeau(true);
-                break;
-              case "cigare":
-                CtrlCharacter.getListCharacter().get(id).setCigare(true);
-                break;
-              case "lunettes":
-                CtrlCharacter.getListCharacter().get(id).setLunettes(true);
-                break;
-              case "boucle d'oreille":
-                CtrlCharacter.getListCharacter().get(id).setBoucleDoreille(true);
-                break;
-              default:
-            }
-            
-            attribute.remove(RandomAttribute);
-            alreadyPicked++;
-        }
-        
-        return randAttribute;
-    }
-    
-    private void SetAttribute(String attribute){
-        
-    }*/
 }
 
