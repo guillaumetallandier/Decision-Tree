@@ -3,7 +3,7 @@ package model;
 import java.awt.*;
 
 public class Arms extends Item {
-    private Arms(String name, Image image) {
+    private Arms(String name, String image) {
         super(name, image);
     }
 

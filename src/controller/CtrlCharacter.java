@@ -22,12 +22,15 @@ public class CtrlCharacter {
 
     private CtrlItems _ctrlItems;
 
-    private Instances _students;
+    private Instances _instances;
+
+    private ArrayList<Student> _students;
     
     public CtrlCharacter(){
         _ctrlItems = new CtrlItems();
-        _students = new Instances("Students",_ctrlItems.getAttributes(),25);
-        _students.setClassIndex(_students.numAttributes()-1);
+        _students = new ArrayList<>();
+        _instances = new Instances("Students",_ctrlItems.getAttributes(),25);
+        _instances.setClassIndex(_instances.numAttributes()-1);
         creationOfStudents(25);
     }
     
@@ -42,20 +45,21 @@ public class CtrlCharacter {
             Arms arms = _ctrlItems.getRandomArms();
             student = new Student(nextID,hat,cigaret,glasses,beard,arms);
             nextID++;
+            _students.add(student);
             Instance instance = new DenseInstance(5);
-            instance.setDataset(_students);
+            instance.setDataset(_instances);
             instance.setValue(0,hat.getName());
             instance.setValue(1, beard.getName());
             instance.setValue(2, cigaret.getName());
             instance.setValue(3, glasses.getName());
             instance.setValue(4, arms.getName());
 
-            _students.add(instance);
+            _instances.add(instance);
         }
     }
 
     public void showAllStudents(){
-        for (Instance student : _students) {
+        for (Student student : _students) {
             System.out.println(student.toString());
         }
     }

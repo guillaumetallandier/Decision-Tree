@@ -70,10 +70,16 @@ public class CtrlItems {
             strGlasses.add(g.getName());
         }
 
+        ArrayList<String> strArms = new ArrayList<>();
+        for(Arms a : _arms){
+            strArms.add(a.getName());
+        }
+
         _attributes.add(new Attribute("Hats", strHats));
         _attributes.add(new Attribute("Beards", strBeards));
         _attributes.add(new Attribute("Cigarets", strCigarets));
         _attributes.add(new Attribute("Glasses", strGlasses));
+        _attributes.add(new Attribute("Arms",strArms));
     }
 
     Glasses getRandomGlasses(){

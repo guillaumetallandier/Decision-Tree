@@ -41,7 +41,27 @@ public class Student{
 
     @Override
     public String toString(){
-        return "Student "+_ID+" : "+ _beard+","+_glasses+","+_cigaret+","+_hat+","+_arms;
+        return "Student "+_ID+" : "+ _beard.getName()+","+_glasses.getName()+","+_cigaret.getName()+","+_hat.getName()+","+_arms.getName();
+    }
+
+    public Hat getHat() {
+        return _hat;
+    }
+
+    public Beard getBeard(){
+        return _beard;
+    }
+
+    public Cigaret getCigaret(){
+        return _cigaret;
+    }
+
+    public Glasses getGlasses(){
+        return _glasses;
+    }
+
+    public Arms getArms(){
+        return _arms;
     }
 
 
