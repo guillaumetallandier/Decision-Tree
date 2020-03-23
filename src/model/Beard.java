@@ -7,7 +7,7 @@ public class Beard extends Item {
         super(name, image);
     }
 
-    public static Beard BEARD = new Beard("Beard",null);
-    public static Beard MUSTACHE = new Beard("Mustache",null);
-    public static Beard NONE = new Beard("None", null);
+    public static Beard BEARD = new Beard("Beard","../../Images/Beard.png");
+    public static Beard MUSTACHE = new Beard("Mustache","../../Images/Mustache.png");
+    public static Beard NONE = new Beard("None","../../Images/None.png");
 }

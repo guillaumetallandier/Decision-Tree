@@ -7,7 +7,7 @@ public class Cigaret extends Item {
         super(name, image);
     }
 
-    public static Cigaret CIGARE = new Cigaret("Cigare", null);
-    public static Cigaret CIGARET = new Cigaret("Cigaret",null);
-    public static Cigaret NONE = new Cigaret("None",null);
+    public static Cigaret CIGARE = new Cigaret("Cigare","../../Images/Cigare.png");
+    public static Cigaret CIGARET = new Cigaret("Cigaret","../../Images/Cigaret.png");
+    public static Cigaret NONE = new Cigaret("None","../../Images/None.png");
 }
