@@ -7,4 +7,7 @@ public class Glasses extends Item {
         super(name, image);
     }
 
+    public static Glasses NERD_GLASSES = new Glasses("Nerd Glasses", null);
+    public static Glasses SOLAR_GLASSES = new Glasses("Solar Glasses", null);
+    public static Glasses NONE = new Glasses("None",null);
 }
