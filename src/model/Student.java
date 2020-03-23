@@ -7,16 +7,16 @@ import weka.core.Instances;
 import java.util.Enumeration;
 
 
-public class Character implements Instance {
+public class Student implements Instance {
     
     private int _ID;
-    private String _hat;
-    private String _cigaret;
-    private String _beard;
-    private String _glasses;
+    private Hat _hat;
+    private Cigaret _cigaret;
+    private Beard _beard;
+    private Glasses _glasses;
 
     
-    public Character(int ID, String hat, String cigaret, String glasses, String beard) {
+    public Student(int ID, Hat hat, Cigaret cigaret, Glasses glasses, Beard beard) {
         _ID = ID;
         _hat = hat;
         _cigaret = cigaret;
