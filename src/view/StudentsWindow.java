@@ -21,17 +21,19 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 
-public class StudentsWindows extends JFrame{
+public class StudentsWindow extends JFrame{
     /**
      * @attribute
      */
     private static final long serialVersionUID = 1L;
-    private ArrayList<Student> _students;
+
+    private CtrlCharacter _ctrlStudent;
     
     private JPanel pAjoutPeronnage = new JPanel();
 
-    public StudentsWindows(ArrayList<Student> students) throws IOException {
-        _students = new ArrayList<>(students);
+    public StudentsWindow(CtrlCharacter ctrlStudent) throws IOException {
+        _ctrlStudent=ctrlStudent;
+
 
         this.setSize(1000, 1000);
         this.setTitle("Business intelligence");
@@ -54,7 +56,7 @@ public class StudentsWindows extends JFrame{
         Border blackline = BorderFactory.createLineBorder(Color.black);
 
         //panel pour les personnages
-        for (Student s : _students) {
+        for (Student s : _ctrlStudent.getStudents()) {
             JPanel pPersonnage = new JPanel();
             pPersonnage.setBackground(Color.red);
             pPersonnage.setBorder(blackline);
