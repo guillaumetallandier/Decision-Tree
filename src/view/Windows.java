@@ -29,7 +29,7 @@ public class Windows extends JFrame{
     private JPanel pAjoutPeronnage = new JPanel();
     
     
-
+/*
     public Windows(){
         
         this.setSize(1200, 800);
@@ -45,7 +45,7 @@ public class Windows extends JFrame{
         pPrincipal.add(menuBar, BorderLayout.SOUTH);
         JButton bLancer = new JButton("Lancer");
         menuBar.add(bLancer);
-        
+
         pAjoutPeronnage.setLayout(new GridLayout(4, 4));
         pPrincipal.add(pAjoutPeronnage, BorderLayout.CENTER);
         int id = 1;
@@ -146,6 +146,6 @@ public class Windows extends JFrame{
     
     private void SetAttribute(String attribute){
         
-    }
+    }*/
 }
 
