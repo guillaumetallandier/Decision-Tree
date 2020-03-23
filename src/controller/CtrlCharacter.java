@@ -63,6 +63,10 @@ public class CtrlCharacter {
             System.out.println(student.toString());
         }
     }
+
+    public ArrayList<Student> getStudents(){
+        return _students;
+    }
     /*
     public static Character getCellule(Integer id) {
         for(int i=0;i<listCharacter.size();i++){

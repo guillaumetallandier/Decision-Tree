@@ -10,9 +10,14 @@ import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 
@@ -25,7 +30,7 @@ public class StudentsWindows extends JFrame{
     
     private JPanel pAjoutPeronnage = new JPanel();
 
-    public StudentsWindows(ArrayList<Student> students) {
+    public StudentsWindows(ArrayList<Student> students) throws IOException {
         _students = new ArrayList<>(students);
 
         this.setSize(1000, 1000);
@@ -34,7 +39,7 @@ public class StudentsWindows extends JFrame{
 
         // panneau
         JPanel pPrincipal = new JPanel(new BorderLayout());
-        this.setContentPane(pPrincipal);
+
 
         // menu
         JMenuBar menuBar = new JMenuBar();
@@ -45,37 +50,37 @@ public class StudentsWindows extends JFrame{
         int id = 1;
 
         pAjoutPeronnage.setLayout(new GridLayout(5, 5));
-        pPrincipal.add(pAjoutPeronnage, BorderLayout.CENTER);
+
         Border blackline = BorderFactory.createLineBorder(Color.black);
 
         //panel pour les personnages
-        for (int i = 0; i < 25; i++) {
+        for (Student s : _students) {
             JPanel pPersonnage = new JPanel();
             pPersonnage.setBackground(Color.red);
             pPersonnage.setBorder(blackline);
+            pPersonnage.setSize(200,200);
 
             JLabel Lid = new JLabel("" + id);
             Lid.setVisible(false);
             pPersonnage.add(Lid);
 
-            JLabel img_student = new JLabel(new ImageIcon("src/img/img_student.png"));
-            img_student.setVisible(true);
-            pPersonnage.add(img_student);
+            BufferedImage img_student = ImageIO.read(new File("Images/None_arms.png"));
 
-            JLabel labelHat = new JLabel(new ImageIcon(students.get(i).getHat().getImage()));
-            pPersonnage.add(labelHat);
+            BufferedImage img_hat = ImageIO.read(new File(s.getHat().getImage()));
 
-            JLabel labelBeard = new JLabel(new ImageIcon(students.get(i).getBeard().getImage()));
-            pPersonnage.add(labelBeard);
+            BufferedImage img_beard = ImageIO.read(new File(s.getBeard().getImage()));
 
-            JLabel labelCigaret = new JLabel(new ImageIcon(students.get(i).getBeard().getImage()));
-            pPersonnage.add(labelCigaret);
+            BufferedImage img_cigaret = ImageIO.read(new File(s.getCigaret().getImage()));
 
-            JLabel labelGlasses = new JLabel(new ImageIcon(students.get(i).getGlasses().getImage()));
-            pPersonnage.add(labelGlasses);
+            BufferedImage img_glasses = ImageIO.read(new File(s.getGlasses().getImage()));
 
-            JLabel labelArms = new JLabel(new ImageIcon(students.get(i).getArms().getImage()));
-            pPersonnage.add(labelArms);
+            BufferedImage img_arms = ImageIO.read(new File(s.getArms().getImage()));
+
+            img_student.getGraphics().drawImage(img_hat,0,0,null);
+            img_student.getGraphics().drawImage(img_beard,0,0,null);
+            img_student.getGraphics().drawImage(img_cigaret,0,0,null);
+            img_student.getGraphics().drawImage(img_glasses,0,0,null);
+            img_student.getGraphics().drawImage(img_arms,0,0,null);
 /*
             pPersonnage.addMouseListener(new MouseListener() {
 
@@ -113,12 +118,16 @@ public class StudentsWindows extends JFrame{
                 }
 
             });
-*//*
+*/
+            pPersonnage.add(new JLabel(new ImageIcon(img_student)));
             pPersonnage.setVisible(true);
             pAjoutPeronnage.add(pPersonnage);
-            id++;*/
+            pAjoutPeronnage.setVisible(true);
+            id++;
 
         }
+        pPrincipal.add(pAjoutPeronnage, BorderLayout.CENTER);
+        this.getContentPane().add(pPrincipal);
         this.setVisible(true);
     }
 }
