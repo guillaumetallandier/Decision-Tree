@@ -6,30 +6,29 @@ import weka.core.Instances;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class CtrlItems {
-    private ArrayList<Item> _hats;
+    private ArrayList<Hat> _hats;
 
-    private ArrayList<Item> _beards;
+    private ArrayList<Beard> _beards;
 
-    private ArrayList<Item> _cigarets;
+    private ArrayList<Cigaret> _cigarets;
 
-    private ArrayList<Item> _glasses;
+    private ArrayList<Glasses> _glasses;
 
-    private ArrayList<Item> _arms;
+    private ArrayList<Arms> _arms;
 
     private ArrayList<Attribute> _attributes;
 
-    private Instances _dataBase;
-
-    public CtrlItems(){
+    CtrlItems(){
         _attributes = new ArrayList<>();
 
         _hats= new ArrayList<>();
         _hats.add(Hat.MELON_HAT);
         _hats.add(Hat.CHRISTMAS_HAT);
         _hats.add(Hat.REGULAR_HAT);
-        _hats.add(Hat.NONE)
+        _hats.add(Hat.NONE);
 
         _beards = new ArrayList<>();
         _beards.add(Beard.BEARD);
@@ -51,33 +50,53 @@ public class CtrlItems {
         _arms.add(Arms.FUCK_ARMS);
         _arms.add(Arms.NONE);
 
-        _attributes.add(new Attribute("Hats", String.valueOf(_hats)));
-        _attributes.add(new Attribute("Beards", String.valueOf(_beards)));
-        _attributes.add(new Attribute("Cigarets", String.valueOf(_cigarets)));
-        _attributes.add(new Attribute("Glasses", String.valueOf(_glasses)));
+        ArrayList<String> strHats = new ArrayList<>();
+        for(Hat h : _hats){
+            strHats.add(h.getName());
+        }
+
+        ArrayList<String> strBeards = new ArrayList<>();
+        for(Beard b : _beards){
+            strBeards.add(b.getName());
+        }
+
+        ArrayList<String> strCigarets = new ArrayList<>();
+        for(Cigaret c : _cigarets){
+            strCigarets.add(c.getName());
+        }
+
+        ArrayList<String> strGlasses = new ArrayList<>();
+        for(Glasses g : _glasses){
+            strGlasses.add(g.getName());
+        }
+
+        _attributes.add(new Attribute("Hats", strHats));
+        _attributes.add(new Attribute("Beards", strBeards));
+        _attributes.add(new Attribute("Cigarets", strCigarets));
+        _attributes.add(new Attribute("Glasses", strGlasses));
     }
 
-    public Glasses getRandomGlasses(){
-
+    Glasses getRandomGlasses(){
+        return _glasses.get((int) (Math.random() * (_glasses.size())));
     }
 
-    public Beard getRandomBeard(){
-
+    Beard getRandomBeard(){
+        return _beards.get((int) (Math.random() * (_beards.size())));
     }
 
-    public Cigaret getRandomCigaret(){
-
+    Cigaret getRandomCigaret(){
+        return _cigarets.get((int) (Math.random() * (_beards.size())));
     }
 
-    public Arms getRandomArms(){
-
+    Arms getRandomArms(){
+        return _arms.get((int) (Math.random() * (_arms.size())));
     }
 
-    public Hat getRandomHat(){
-
+    Hat getRandomHat(){
+        return _hats.get((int) (Math.random() * (_hats.size())));
     }
 
-    public ArrayList<Attribute> getAttributes(){
+    ArrayList<Attribute> getAttributes(){
         return _attributes;
     }
 }
