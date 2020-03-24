@@ -92,11 +92,11 @@ public class StudentsWindow extends JFrame{
                 public void mousePressed(MouseEvent arg0) {
                     if(pPersonnage.getBackground() == Color.red){
                         pPersonnage.setBackground(Color.green);
-                        s.setIsInClass(true);
+                        s.setIsInClass("true");
                     }
                     else{
                         pPersonnage.setBackground(Color.red);
-                        s.setIsInClass(false);
+                        s.setIsInClass("false");
                     }
                 }
 
