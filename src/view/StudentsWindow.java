@@ -83,25 +83,21 @@ public class StudentsWindow extends JFrame{
             img_student.getGraphics().drawImage(img_cigaret,0,0,null);
             img_student.getGraphics().drawImage(img_glasses,0,0,null);
             img_student.getGraphics().drawImage(img_arms,0,0,null);
-/*
+
             pPersonnage.addMouseListener(new MouseListener() {
-
                 public void mouseClicked(MouseEvent arg0) {
-                    if(pPersonnage.getBackground() == Color.red){
-                        pPersonnage.setBackground(Color.green);
-                        students.get(this.Lid).setIsInClass("true");
-                    }
-                    else{
-                        pPersonnage.setBackground(Color.red);
-                        Students[].get(this.Lid).setIsInClass("false");
-                    }
-
 
                 }
 
                 public void mousePressed(MouseEvent arg0) {
-                    // TODO
-
+                    if(pPersonnage.getBackground() == Color.red){
+                        pPersonnage.setBackground(Color.green);
+                        s.setIsInClass(true);
+                    }
+                    else{
+                        pPersonnage.setBackground(Color.red);
+                        s.setIsInClass(false);
+                    }
                 }
 
                 public void mouseReleased(MouseEvent arg0) {
@@ -120,7 +116,7 @@ public class StudentsWindow extends JFrame{
                 }
 
             });
-*/
+
             pPersonnage.add(new JLabel(new ImageIcon(img_student)));
             pPersonnage.setVisible(true);
             pAjoutPeronnage.add(pPersonnage);
