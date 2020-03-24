@@ -10,6 +10,7 @@ import model.*;
 
 import model.Hat;
 import view.StudentsWindow;
+import view.TreeWindow;
 import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -32,7 +33,7 @@ public class CtrlCharacter {
         _students = new ArrayList<>();
         _instances = new Instances("Students",_ctrlItems.getAttributes(),25);
         _instances.setClassIndex(_instances.numAttributes()-1);
-        creationOfStudents(25);
+        creationOfStudents(100);
         _window=new StudentsWindow(this);
     }
     
@@ -51,9 +52,9 @@ public class CtrlCharacter {
         }
     }
 
-    private void creationOfInstances(){
+    public void creationOfInstances(){
         for(Student s : _students){
-            Instance instance = new DenseInstance(5);
+            Instance instance = new DenseInstance(6);
             instance.setDataset(_instances);
             instance.setValue(0, s.getHat().getName());
             instance.setValue(1, s.getBeard().getName());
@@ -63,6 +64,7 @@ public class CtrlCharacter {
             instance.setValue(5, s.getIsInClass());
             _instances.add(instance);
         }
+        new TreeWindow(_instances);
     }
 
     public void showAllStudents(){

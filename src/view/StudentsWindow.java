@@ -47,6 +47,32 @@ public class StudentsWindow extends JFrame{
         JMenuBar menuBar = new JMenuBar();
         pPrincipal.add(menuBar, BorderLayout.SOUTH);
         JButton bLancer = new JButton("Lancer");
+        bLancer.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent mouseEvent) {
+                _ctrlStudent.creationOfInstances();
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent mouseEvent) {
+
+            }
+        });
         menuBar.add(bLancer);
 
         int id = 1;
