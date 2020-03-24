@@ -1,7 +1,9 @@
 package controller;
 
+import com.sun.xml.bind.v2.runtime.output.FastInfosetStreamWriterOutput;
 import model.*;
 import weka.core.Attribute;
+import weka.core.FastVector;
 import weka.core.Instances;
 
 import java.lang.reflect.Array;
@@ -19,10 +21,10 @@ public class CtrlItems {
 
     private ArrayList<Arms> _arms;
 
-    private ArrayList<Attribute> _attributes;
+    private FastVector _attributes;
 
     CtrlItems(){
-        _attributes = new ArrayList<>();
+        _attributes = new FastVector();
 
         _hats= new ArrayList<>();
         _hats.add(Hat.MELON_HAT);
@@ -50,36 +52,41 @@ public class CtrlItems {
         _arms.add(Arms.FUCK_ARMS);
         _arms.add(Arms.NONE);
 
-        ArrayList<String> strHats = new ArrayList<>();
+        FastVector strHats = new FastVector(_hats.size());
         for(Hat h : _hats){
             strHats.add(h.getName());
         }
 
-        ArrayList<String> strBeards = new ArrayList<>();
+        FastVector strBeards = new FastVector(_beards.size());
         for(Beard b : _beards){
             strBeards.add(b.getName());
         }
 
-        ArrayList<String> strCigarets = new ArrayList<>();
+        FastVector strCigarets = new FastVector(_cigarets.size());
         for(Cigaret c : _cigarets){
             strCigarets.add(c.getName());
         }
 
-        ArrayList<String> strGlasses = new ArrayList<>();
+        FastVector strGlasses = new FastVector(_glasses.size());
         for(Glasses g : _glasses){
             strGlasses.add(g.getName());
         }
 
-        ArrayList<String> strArms = new ArrayList<>();
+        FastVector strArms = new FastVector(_arms.size());
         for(Arms a : _arms){
             strArms.add(a.getName());
         }
+
+        FastVector strInClass = new FastVector(2);
+        strInClass.add("true");
+        strInClass.add("false");
 
         _attributes.add(new Attribute("Hats", strHats));
         _attributes.add(new Attribute("Beards", strBeards));
         _attributes.add(new Attribute("Cigarets", strCigarets));
         _attributes.add(new Attribute("Glasses", strGlasses));
         _attributes.add(new Attribute("Arms",strArms));
+        _attributes.add(new Attribute("InClass", strInClass));
     }
 
     Glasses getRandomGlasses(){
