@@ -1,5 +1,5 @@
 package view;
-import controller.CtrlCharacter;
+import controller.CtrlStudent;
 import model.Student;
 
 import java.awt.BorderLayout;
@@ -13,9 +13,6 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.Buffer;
-import java.util.ArrayList;
-import java.util.Random;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -27,11 +24,11 @@ public class StudentsWindow extends JFrame{
      */
     private static final long serialVersionUID = 1L;
 
-    private CtrlCharacter _ctrlStudent;
+    private CtrlStudent _ctrlStudent;
     
     private JPanel pAjoutPeronnage = new JPanel();
 
-    public StudentsWindow(CtrlCharacter ctrlStudent) throws IOException {
+    public StudentsWindow(CtrlStudent ctrlStudent) throws IOException {
         _ctrlStudent=ctrlStudent;
 
 
@@ -118,11 +115,11 @@ public class StudentsWindow extends JFrame{
                 public void mousePressed(MouseEvent arg0) {
                     if(pPersonnage.getBackground() == Color.red){
                         pPersonnage.setBackground(Color.green);
-                        s.setIsInClass("true");
+                        s.setIsInClass("Is in class");
                     }
                     else{
                         pPersonnage.setBackground(Color.red);
-                        s.setIsInClass("false");
+                        s.setIsInClass("Is not in class");
                     }
                 }
 

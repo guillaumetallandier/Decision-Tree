@@ -16,7 +16,7 @@ import weka.core.Instance;
 import weka.core.Instances;
 
 
-public class CtrlCharacter {
+public class CtrlStudent {
 
     private static int nextID = 0;
 
@@ -28,7 +28,7 @@ public class CtrlCharacter {
 
     private StudentsWindow _window;
     
-    public CtrlCharacter() throws IOException {
+    public CtrlStudent() throws IOException {
         _ctrlItems = new CtrlItems();
         _students = new ArrayList<>();
         _instances = new Instances("Students",_ctrlItems.getAttributes(),25);

@@ -78,8 +78,8 @@ public class CtrlItems {
         }
 
         FastVector strInClass = new FastVector(2);
-        strInClass.add("true");
-        strInClass.add("false");
+        strInClass.add("Is in class");
+        strInClass.add("Is not in class");
 
         _attributes.add(new Attribute("Hats", strHats));
         _attributes.add(new Attribute("Beards", strBeards));
