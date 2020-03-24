@@ -1,17 +1,13 @@
 package view;
 
-import controller.CtrlCharacter;
 import weka.classifiers.trees.J48;
 import weka.core.Instances;
 import weka.gui.treevisualizer.PlaceNode2;
 import weka.gui.treevisualizer.TreeVisualizer;
 
 import java.awt.BorderLayout;
-import java.util.ArrayList;
-import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
 
 public class TreeWindow extends JFrame{
     /**

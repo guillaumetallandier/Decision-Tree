@@ -15,7 +15,7 @@ public class Student{
     private Beard _beard;
     private Glasses _glasses;
     private Arms _arms;
-    private String _isInClass = "false" ;
+    private String _isInClass = "Is not in class" ;
 
     
     public Student(int ID, Hat hat, Cigaret cigaret, Glasses glasses, Beard beard, Arms arms) {

@@ -1,9 +1,8 @@
-import controller.CtrlCharacter;
-import view.StudentsWindow;
+import controller.CtrlStudent;
 
 public class Prgm_principal {
     public static void main(String[] args) throws Exception {
-            CtrlCharacter _ctrlStudents = new CtrlCharacter();
+            CtrlStudent _ctrlStudents = new CtrlStudent();
             //_ctrlStudents.showAllStudents();
         }
 }
