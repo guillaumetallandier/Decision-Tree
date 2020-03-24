@@ -15,7 +15,7 @@ public class Student{
     private Beard _beard;
     private Glasses _glasses;
     private Arms _arms;
-    private boolean _isInClass = false ;
+    private String _isInClass = "false" ;
 
     
     public Student(int ID, Hat hat, Cigaret cigaret, Glasses glasses, Beard beard, Arms arms) {
@@ -31,11 +31,11 @@ public class Student{
         return _ID;
     }
 
-    public boolean getIsInClass(){
+    public String getIsInClass(){
         return _isInClass;
     }
 
-    public void setIsInClass(boolean isInClass){
+    public void setIsInClass(String isInClass){
         _isInClass=isInClass;
     }
 
