@@ -19,7 +19,7 @@ public class TreeWindow extends JFrame{
 
     public TreeWindow(Instances students){
 		this.setSize(800, 12000);
-        this.setTitle("Tree");
+        this.setTitle("Voici un résumé de vos critères de sélection...");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setContentPane(pPrincipal);
 

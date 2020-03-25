@@ -2,10 +2,7 @@ package view;
 import controller.CtrlStudent;
 import model.Student;
 
-import java.awt.BorderLayout;
-
-import java.awt.Color;
-import java.awt.GridLayout;
+import java.awt.*;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -30,10 +27,9 @@ public class StudentsWindow extends JFrame{
 
     public StudentsWindow(CtrlStudent ctrlStudent) throws IOException {
         _ctrlStudent=ctrlStudent;
-
-
-        this.setSize(1000, 1000);
-        this.setTitle("Business intelligence");
+        Toolkit kit = getToolkit();
+        this.setSize(kit.getScreenSize());
+        this.setTitle("Les candidats à l'entrée dans ma classe");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         // panneau
@@ -43,7 +39,7 @@ public class StudentsWindow extends JFrame{
         // menu
         JMenuBar menuBar = new JMenuBar();
         pPrincipal.add(menuBar, BorderLayout.SOUTH);
-        JButton bLancer = new JButton("Lancer");
+        JButton bLancer = new JButton("Analyser mes choix");
         bLancer.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
@@ -115,11 +111,11 @@ public class StudentsWindow extends JFrame{
                 public void mousePressed(MouseEvent arg0) {
                     if(pPersonnage.getBackground() == Color.red){
                         pPersonnage.setBackground(Color.green);
-                        s.setIsInClass("Is in class");
+                        s.setIsInClass("Est dans ma classe");
                     }
                     else{
                         pPersonnage.setBackground(Color.red);
-                        s.setIsInClass("Is not in class");
+                        s.setIsInClass("N'est pas dans ma classe");
                     }
                 }
 
