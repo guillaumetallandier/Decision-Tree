@@ -78,15 +78,15 @@ public class CtrlItems {
         }
 
         FastVector strInClass = new FastVector(2);
-        strInClass.add("Is in class");
-        strInClass.add("Is not in class");
+        strInClass.add("Est dans ma classe");
+        strInClass.add("N'est pas dans ma classe");
 
-        _attributes.add(new Attribute("Hats", strHats));
-        _attributes.add(new Attribute("Beards", strBeards));
-        _attributes.add(new Attribute("Cigarets", strCigarets));
-        _attributes.add(new Attribute("Glasses", strGlasses));
-        _attributes.add(new Attribute("Arms",strArms));
-        _attributes.add(new Attribute("InClass", strInClass));
+        _attributes.add(new Attribute("Chapeaux", strHats));
+        _attributes.add(new Attribute("Barbe", strBeards));
+        _attributes.add(new Attribute("Cigarette", strCigarets));
+        _attributes.add(new Attribute("Lunettes", strGlasses));
+        _attributes.add(new Attribute("Bras",strArms));
+        _attributes.add(new Attribute("Ma classe", strInClass));
     }
 
     Glasses getRandomGlasses(){
